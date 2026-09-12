@@ -17,12 +17,11 @@ def page(css="style.css", wa=WA_OK, price="S/ 80"):
     return (
         '<!doctype html>\n<html lang="en">\n<head>\n'
         f'<link rel="stylesheet" href="{css}">\n'
-        '<script>document.documentElement.className += " js";</script>\n'
+        '<script src="i18n.js" defer></script>\n'
         '</head>\n<body data-page="index" data-lang="en">\n'
         '<h1 data-i="hero.title">Hi</h1>\n'
         f'<span class="price" data-i="t1.price">{price}</span>\n'
         f'{wa}\n'
-        '<script src="i18n.js"></script>\n'
         '</body>\n</html>\n'
     )
 
@@ -63,10 +62,10 @@ class SiteTest(unittest.TestCase):
             problems,
         )
 
-    def test_missing_js_class(self):
-        html = page().replace(
-            '<script>document.documentElement.className += " js";</script>\n', "")
-        self.assertIn("index.html: <head> does not add the js class", self.run_check(html))
+    def test_missing_i18n_script(self):
+        html = page().replace('<script src="i18n.js" defer></script>\n', "")
+        self.assertIn(
+            "index.html: <head> does not load i18n.js deferred", self.run_check(html))
 
     def test_amounts_differ(self):
         problems = self.run_check(page(price="S/ 80"), js=dictionary(price="S/ 90"))

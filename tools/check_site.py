@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """Site check: internal links resolve, WhatsApp links carry both languages,
-every page adds the js class, and amounts match between the two languages."""
+every page loads i18n.js deferred in <head>, and amounts match between the
+two languages."""
 import pathlib
 import re
 import sys
@@ -13,7 +14,7 @@ PAGES = {
     "telesalud": "telesalud.html",
 }
 EXTERNAL = ("#", "mailto:", "http://", "https://", "data:")
-JS_FLAG = 'document.documentElement.className += " js"'
+I18N_TAG = '<script src="i18n.js" defer></script>'
 AMOUNT = re.compile(r"US\$ ?\d+|S/ ?\d+|993 126 398")
 
 
@@ -86,8 +87,8 @@ def check(root=ROOT):
                 problems.append(f"{fname}: WhatsApp link without data-href-alt: {href}")
 
         head = re.search(r"<head>(.*?)</head>", html, re.S)
-        if not head or JS_FLAG not in head.group(1):
-            problems.append(f"{fname}: <head> does not add the js class")
+        if not head or I18N_TAG not in head.group(1):
+            problems.append(f"{fname}: <head> does not load i18n.js deferred")
 
         entries = dict_entries(js, page)
         if entries is None:

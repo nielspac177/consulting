@@ -223,6 +223,7 @@ T.telesalud = {
 
 // ---- runtime ----
 (function () {
+  document.documentElement.className += " js";
   var body = document.body;
   var page = body.getAttribute("data-page");
   var authored = body.getAttribute("data-lang") || "en";
@@ -246,7 +247,7 @@ T.telesalud = {
     }
   }
 
-  function apply(lang) {
+  function apply(lang, persist) {
     if (lang !== authored && !Object.keys(dict).length) return;
     var src = lang === authored ? BASE : dict;
     var els = document.querySelectorAll("[data-i]");
@@ -270,25 +271,27 @@ T.telesalud = {
       btn.setAttribute("aria-label", lang === "es" ? "Switch to English" : "Cambiar a español");
     }
     current = lang;
-    try { localStorage.setItem("lang", lang); } catch (e) {}
+    if (persist) {
+      try { localStorage.setItem("lang", lang); } catch (e) {}
+    }
   }
 
   function initial() {
     var q = /[?&]lang=(es|en)\b/.exec(location.search);
-    if (q) return q[1];
+    if (q) return { lang: q[1], explicit: true };
     try {
       var s = localStorage.getItem("lang");
-      if (s === "es" || s === "en") return s;
+      if (s === "es" || s === "en") return { lang: s, explicit: false };
     } catch (e) {}
-    return authored;
+    return { lang: authored, explicit: false };
   }
 
   capture();
   var start = initial();
-  apply(start);
+  apply(start.lang, start.explicit);
   var toggle = document.getElementById("lang-btn");
   if (toggle) {
-    toggle.addEventListener("click", function () { apply(current === authored ? other : authored); });
+    toggle.addEventListener("click", function () { apply(current === authored ? other : authored, true); });
   }
 
   var rv = document.querySelectorAll(".rv");
