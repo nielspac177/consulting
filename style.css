@@ -103,7 +103,7 @@ footer a { text-decoration: underline; text-underline-offset: 0.2em; }
 @media (prefers-reduced-motion: reduce) { .rv { opacity: 1; transform: none; transition: none; } html { scroll-behavior: auto; } }
 
 /* Responsive */
-@media (max-width: 639px) {
+@media (max-width: 767px) {
   .nav .wrap { flex-wrap: wrap; height: auto; padding-top: 0.75rem; padding-bottom: 0.75rem; }
   .pills { order: 3; width: 100%; justify-content: space-between; }
   .pills a { padding: 0.4rem 0.6rem; font-size: 0.9rem; }
@@ -116,5 +116,5 @@ footer a { text-decoration: underline; text-underline-offset: 0.2em; }
   .two { grid-template-columns: 1fr 1fr; }
 }
 @media (min-width: 1024px) {
-  .hero { grid-template-columns: 1.2fr 1fr; }
+  .hero:has(img) { grid-template-columns: 1.2fr 1fr; }
 }
