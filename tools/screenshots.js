@@ -15,6 +15,7 @@ const WIDTHS = [375, 1280];
         await page.setViewport({ width: w, height: 900, deviceScaleFactor: 1 });
         await page.goto(`http://127.0.0.1:8765/${p}.html`, { waitUntil: 'networkidle0' });
         await page.evaluate(() => document.fonts.ready);
+        await page.addStyleTag({ content: '.rv{transition:none !important}' });
         await page.evaluate(() => document.querySelectorAll('.rv').forEach((el) => el.classList.add('in')));
         const overflow = await page.evaluate(() => document.documentElement.scrollWidth - document.documentElement.clientWidth);
         await page.screenshot({ path: `tools/shots/${p}-${w}.png`, fullPage: true });
