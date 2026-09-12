@@ -17,14 +17,22 @@ Sitio estático de Niels Pacheco-Barrios, MD. Sin dependencias ni proceso de con
 
 ## Verificaciones
 
+`tools/check_html.sh` y `tools/screenshots.sh` instalan `vnu-jar` y `puppeteer-core` en el directorio `node_modules/` (ignorado por git) la primera vez que se ejecutan, y requieren Java 11 o superior, Node y Google Chrome en su ruta estándar de macOS (`/Applications/Google Chrome.app/Contents/MacOS/Google Chrome`).
+
 ```bash
 /usr/bin/python3 -m unittest tests/test_check_i18n.py
+/usr/bin/python3 -m unittest tests/test_check_site.py
 /usr/bin/python3 tools/check_i18n.py
+/usr/bin/python3 tools/check_site.py
 tools/check_html.sh
 tools/check_links.sh
 tools/screenshots.sh
 tools/lighthouse.sh
 ```
+
+## Número de colegiatura
+
+El número del Colegio Médico del Perú va en los `<span>` vacíos que ya están en su lugar: `<span id="cmp">` (en `index.html` y `telesalud.html`) y `<span id="cmp-footer">` (en las cuatro páginas). Escriba el número dentro de cada `<span>`; no hace falta ningún otro cambio.
 
 ## Publicación
 

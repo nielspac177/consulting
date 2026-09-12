@@ -166,7 +166,7 @@ T.telesalud = {
   "notice.text": "In an emergency, call 106 (SAMU) in Peru or your country's emergency number, or go to the nearest health facility.",
   "a.label": "For residents of Peru",
   "a.title": "Primary-care teleconsultation",
-  "a.text": "A medical consultation on Google Meet with a physician licensed in Peru. Assessment, diagnostic orientation, a prescription where appropriate, and written instructions.",
+  "a.text": "A medical consultation on Google Meet with a physician licensed in Peru. Assessment, diagnostic orientation, a prescription where appropriate, and written instructions. Available only to people residing in Peru; payment by Yape or Plin.",
   "t1.title": "Teleconsultation",
   "t1.meta": "30 min · Google Meet",
   "t1.price": "S/ 80",
