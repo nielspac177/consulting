@@ -111,6 +111,46 @@ T.mentoring = {
   "f.site": "Sitio académico"
 };
 
+T.consulting = {
+  "__title": "Consultoría — Niels Pacheco-Barrios, MD",
+  "__desc": "Estadística, machine learning e IA, diseño de estudios, revisiones sistemáticas y redacción científica para grupos de investigación, clínicos y equipos de salud digital. Llamada inicial gratuita de 30 minutos.",
+  "nav.mentoring": "Mentoría",
+  "nav.consulting": "Consultoría",
+  "nav.telesalud": "Telesalud",
+  "hero.kicker": "Consultoría",
+  "hero.title": "Análisis riguroso. Resultados claros.",
+  "hero.lede": "Estadística, machine learning y redacción científica para grupos de investigación, clínicos y equipos de salud digital que necesitan un trabajo defendible ante revisores, reguladores y pacientes.",
+  "hero.cta": "Qué hago",
+  "act.call": "Agendar una llamada inicial gratuita",
+  "act.form": "Formulario de proyecto",
+  "act.wa": "WhatsApp",
+  "svc.title": "Qué hago",
+  "svc.1": "<b>Análisis estadístico y reporte.</b> Desde tablas descriptivas hasta modelos mixtos, análisis de supervivencia y métodos bayesianos.",
+  "svc.2": "<b>Machine learning e IA para datos clínicos.</b> Imágenes, historias clínicas y texto: desarrollo, validación y reporte honesto de modelos.",
+  "svc.3": "<b>Diseño de estudios y protocolos.</b> Tamaño de muestra, desenlaces, prerregistro y planes de análisis.",
+  "svc.4": "<b>Revisiones sistemáticas y metaanálisis.</b> Conformes a PRISMA, con evaluación de riesgo de sesgo y código reproducible.",
+  "svc.5": "<b>Redacción científica y figuras.</b> Manuscritos, secciones de proyectos de financiamiento y figuras listas para publicar.",
+  "svc.6": "<b>Docencia y talleres.</b> Bioestadística y machine learning para equipos clínicos, en español o inglés.",
+  "eng.title": "Cómo funciona un proyecto",
+  "eng.1": "Una llamada inicial gratuita de 30 minutos para entender el problema y los datos.",
+  "eng.2": "Una cotización escrita: alcance, entregables, plazos y precio. Por hora desde US$ 120 (S/ 250 en el Perú) o precio fijo por proyecto.",
+  "eng.3": "Trabajo en ciclos cortos con un documento compartido y código que usted conserva. Factura por PayPal a la entrega.",
+  "cred.title": "Trayectoria",
+  "cred.text": "Investigador posdoctoral en el Mapping &amp; Engineering Neural Dynamics Lab, Harvard Medical School. Médico cirujano (Universidad Peruana Cayetano Heredia), MSc en Bioestadística y Bioinformática, MMSc en Investigación Clínica (Harvard). Publicaciones en Alzheimer's &amp; Dementia, Nature Mental Health, Brain Communications y Sleep Advances.",
+  "cred.link": "Publicaciones y CV",
+  "cta.title": "Cuénteme sobre el proyecto.",
+  "cta.text": "Agende la llamada inicial o describa el proyecto en el formulario y le respondo en dos días hábiles.",
+  "faq.title": "Preguntas frecuentes",
+  "faq.q1": "¿Firma acuerdos de confidencialidad y de datos?",
+  "faq.a1": "Sí. Los datos se quedan donde usted los custodia siempre que sea posible, y trabajo con datos anonimizados bajo las reglas de su institución.",
+  "faq.q2": "¿Qué herramientas usa?",
+  "faq.a2": "R, Python, MATLAB y lo que su equipo ya utilice. Los entregables incluyen el código.",
+  "faq.q3": "¿Coautoría en lugar de honorarios?",
+  "faq.a3": "A veces, en proyectos académicos con una contribución científica clara. Lo conversamos en la llamada.",
+  "f.cmp": "Médico, Colegio Médico del Perú",
+  "f.site": "Sitio académico"
+};
+
 // ---- runtime ----
 (function () {
   var body = document.body;
