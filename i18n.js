@@ -247,6 +247,7 @@ T.telesalud = {
   }
 
   function apply(lang) {
+    if (lang !== authored && !Object.keys(dict).length) return;
     var src = lang === authored ? BASE : dict;
     var els = document.querySelectorAll("[data-i]");
     for (var i = 0; i < els.length; i++) {
@@ -284,7 +285,7 @@ T.telesalud = {
 
   capture();
   var start = initial();
-  if (start !== authored) apply(start);
+  apply(start);
   var toggle = document.getElementById("lang-btn");
   if (toggle) {
     toggle.addEventListener("click", function () { apply(current === authored ? other : authored); });
