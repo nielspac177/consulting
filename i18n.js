@@ -121,7 +121,7 @@ T.consulting = {
   "hero.title": "Análisis riguroso. Resultados claros.",
   "hero.lede": "Estadística, machine learning y redacción científica para grupos de investigación, clínicos y equipos de salud digital que necesitan un trabajo defendible ante revisores, reguladores y pacientes.",
   "hero.cta": "Qué hago",
-  "act.call": "Solicitar una llamada inicial por WhatsApp",
+  "act.call": "Llamada inicial por WhatsApp",
   "act.form": "Formulario de proyecto",
   "act.wa": "WhatsApp",
   "svc.title": "Qué hago",
