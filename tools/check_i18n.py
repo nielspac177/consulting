@@ -32,6 +32,8 @@ def check(root=ROOT):
     for page, fname in PAGES.items():
         f = root / fname
         if not f.exists():
+            if dict_keys(js, page) is not None:
+                problems.append(f"{fname}: page file missing but T.{page} exists")
             continue
         pk = page_keys(f.read_text(encoding="utf-8"))
         dk = dict_keys(js, page)

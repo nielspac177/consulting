@@ -32,6 +32,15 @@ NO_META = (
 )
 
 
+ORPHAN_PAGE = (
+    'var T = {};\nT.index = {\n'
+    '  "__title": "Título",\n  "__desc": "Desc",\n'
+    '  "hero.title": "Hola",\n  "hero.lede": "Entrada"\n};\n'
+    'T.mentoring = {\n'
+    '  "__title": "Mentoría",\n  "__desc": "Desc",\n  "hero.title": "Hola"\n};\n'
+)
+
+
 class ParityTest(unittest.TestCase):
     def run_check(self, js):
         with tempfile.TemporaryDirectory() as d:
@@ -51,6 +60,12 @@ class ParityTest(unittest.TestCase):
 
     def test_missing_dictionary(self):
         self.assertIn("index.html: no T.index dictionary in i18n.js", self.run_check("var T = {};\n"))
+
+    def test_missing_page_with_dictionary(self):
+        self.assertIn(
+            "mentoring.html: page file missing but T.mentoring exists",
+            self.run_check(ORPHAN_PAGE),
+        )
 
     def test_missing_meta_keys(self):
         problems = self.run_check(NO_META)
