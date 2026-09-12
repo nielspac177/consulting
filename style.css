@@ -30,7 +30,7 @@ p { margin: 0 0 1rem; max-width: 62ch; }
 
 /* Navigation */
 .nav { position: sticky; top: 0; background: var(--ground); border-bottom: 1px solid var(--hair); z-index: 10; }
-.nav .wrap { display: flex; align-items: center; justify-content: space-between; gap: 1rem; height: 4rem; }
+.nav .wrap { display: flex; align-items: center; justify-content: space-between; gap: 1rem; min-height: 4rem; flex-wrap: wrap; padding-top: 0.5rem; padding-bottom: 0.5rem; }
 .brand { font-weight: 600; letter-spacing: -0.01em; white-space: nowrap; }
 .pills { display: flex; gap: 0.25rem; border: 1px solid var(--hair); border-radius: 999px; padding: 0.25rem; }
 .pills a { padding: 0.4rem 0.9rem; border-radius: 999px; font-size: 0.95rem; line-height: 1.2; }
@@ -106,7 +106,7 @@ footer a { text-decoration: underline; text-underline-offset: 0.2em; }
 
 /* Responsive */
 @media (max-width: 767px) {
-  .nav .wrap { flex-wrap: wrap; height: auto; padding-top: 0.75rem; padding-bottom: 0.75rem; }
+  .nav .wrap { padding-top: 0.75rem; padding-bottom: 0.75rem; }
   .pills { order: 3; width: 100%; justify-content: space-between; }
   .pills a { padding: 0.4rem 0.6rem; font-size: 0.9rem; }
   section[id] { scroll-margin-top: 11rem; }
@@ -116,6 +116,7 @@ footer a { text-decoration: underline; text-underline-offset: 0.2em; }
   .offers { grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
   .pay { grid-template-columns: 1fr 1fr; }
   .steps { grid-template-columns: repeat(3, 1fr); }
+  .two .steps { grid-template-columns: 1fr; }
   .two { grid-template-columns: 1fr 1fr; }
 }
 @media (min-width: 1024px) {

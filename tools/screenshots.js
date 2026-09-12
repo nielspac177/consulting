@@ -4,7 +4,7 @@ const fs = require('fs');
 const puppeteer = require('puppeteer-core');
 const CHROME = '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome';
 const PAGES = ['index', 'mentoring', 'consulting', 'telesalud'].filter((p) => fs.existsSync(`${p}.html`));
-const WIDTHS = [375, 640, 768, 1280];
+const WIDTHS = [375, 640, 768, 1024, 1280];
 const LANGS = ['authored', 'other'];
 
 // A fresh context per capture keeps the language stored in localStorage from leaking
